@@ -1,0 +1,5 @@
+{{- if not (or (eq .chezmoi.hostname .myhostnames.wkFedora) (eq .chezmoi.hostname .myhostnames.wkUbuntu)) }}
+.config/zsh/custom/anvim-as-vim.zsh
+{{- else }}
+.config/zsh/custom/rnvim-as-vim.zsh
+{{- end }}

@@ -1,0 +1,76 @@
+[push]
+    default = current
+    autosetupremote = true
+[merge]
+    conflictstyle = diff3
+    guitool = kdiff3
+	tool = fugitive
+[core]
+    longpaths = true
+    pager = delta
+	editor = vim
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+[diff]
+    colorMoved = default
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+[alias]
+    co = checkout
+    cl = clone
+    br = branch
+    ci = commit
+    st = status
+    wt = worktree
+    df = diff
+    lg = log --date=local -p
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    cln = clean -dfx
+    brls = branch -vv
+    cobr = checkout -t -b
+    brlsa = branch -ar
+[branch]
+    autosetupmerge = true
+[log]
+    date = format-local:%Y-%m-%d %H:%M
+[rebase]
+    autoStash = true
+    autosquash = false
+    updateRefs = false
+[include]
+    path = user
+    path = proxy
+[user]
+    name = Frizzell-Carlton, Russ
+    email = russ.frizzell-carlton@ge.com
+    signingkey = 4350D3ED37F9AA47
+[pull]
+    rebase = false
+[fetch]
+    prune = false
+[mergetool "kdiff3"]
+    cmd = \"\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[lfs]
+	cachecredentials = true
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+[init]
+	defaultBranch = main
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential]
+	helper = /usr/local/bin/git-credential-manager
+	credentialStore = gpg

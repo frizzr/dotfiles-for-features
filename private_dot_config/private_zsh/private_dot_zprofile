@@ -1,0 +1,26 @@
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export PATH="${PATH}:${HOME}/.krew/bin"
+
+# Created by `pipx` on 2024-06-14 12:44:29
+export PATH="$PATH:/home/frizzr/.local/bin"
+
+# Timezone
+export TZ="America/New_York"
+
+export GIT_WORKSPACE=~/repos
+
+export PATH="/home/linuxbrew/.linuxbrew/opt/node@20/bin:$PATH"
+
+# Override git with git-clonep when using git clone
+export ORIGINAL_GIT=$(sh -c 'command -v git')
+git()
+{
+    if [[ "$1" == "clone" ]] ; then
+        shift
+        git-clonep $@
+    else
+        $ORIGINAL_GIT $@
+    fi
+}
