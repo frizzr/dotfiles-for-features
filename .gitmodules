@@ -1,0 +1,3 @@
+[submodule "private_dot_config/external_anvim"]
+	path = private_dot_config/external_anvim
+	url = egh:frizzr/astronvim.git
