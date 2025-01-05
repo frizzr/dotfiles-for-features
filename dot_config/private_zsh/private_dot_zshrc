@@ -1,5 +1,5 @@
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-eval $(keychain --eval --agents gpg)
+eval $(keychain --eval --quiet --agents gpg)
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
