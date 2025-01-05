@@ -1,14 +1,10 @@
-choosevim() {
-    local SELECTION="$1"
-    local SETTING="NVIM_APPNAME=$SELECTION nvim"
-    alias vim=$SETTING
-    alias vi=$SETTING
-    export EDITOR=$SETTING
-}
-
 OHOST="$(hostname)"
 if [[ "$OHOST" == "GCGPP5J3E" || "$OHOST" == "fedoraremix" ]]; then
-    choosevim rnvim
+    alias vim="NVIM_APPNAME=rnvim nvim"
+    alias vi="NVIM_APPNAME=rnvim nvim"
+    export EDITOR="NVIM_APPNAME=rnvim nvim"
 else
-    choosevim anvim
+    alias vim="NVIM_APPNAME=anvim nvim"
+    alias vi="NVIM_APPNAME=anvim nvim"
+    export EDITOR="NVIM_APPNAME=anvim nvim"
 fi
