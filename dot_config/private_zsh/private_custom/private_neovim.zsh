@@ -1,9 +1,4 @@
-OHOST="$(hostname)"
-export NVIM_APPNAME=anvim
-if [[ "$OHOST" == "GCGPP5J3E" || "$OHOST" == "fedoraremix" ]]; then
-    export NVIM_APPNAME=rnvim
-fi
-
+export NVIM_APPNAME=rnvim   # or anvim will use astronvim
 alias vim=nvim
 alias vi=nvim
 export EDITOR=nvim
