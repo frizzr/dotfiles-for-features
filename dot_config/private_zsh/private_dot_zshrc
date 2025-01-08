@@ -123,8 +123,6 @@ autoload -Uz compinit && compinit
 
 complete -C '/usr/local/bin/aws_completer' aws
 
-. $(pack completion --shell zsh)
-
 export GPG_TTY=$(tty)
 
 export _EXPERIMENTAL_DAGGER_RUNNER_HOST="docker-image://dig-grid-artifactory.apps.ge.com/bsf-docker/bsf/dagger/custom-dagger-engine:v0.14.0"
