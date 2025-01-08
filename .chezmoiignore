@@ -1,3 +1,0 @@
-{{- if not (or (eq .chezmoi.hostname .myhostnames.wkFedora) (eq .chezmoi.hostname .myhostnames.wkUbuntu)) }}
-.config/zsh/custom/secrets.zsh
-{{- end }}
