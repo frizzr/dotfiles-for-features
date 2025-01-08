@@ -172,7 +172,7 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
   end,
 })
 
-lspconfig.tsserver.setup{}
+lspconfig.ts_ls.setup{}
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'sh',
